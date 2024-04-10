@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 { 
 	locale loc("ru_RU.UTF-8");
     locale::global(loc);
-	wstring Text =L"123456789";
+	wstring Text =L"Привет";
 	check(Text, 4); // Text + key 
 	return 0;
 }

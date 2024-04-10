@@ -9,8 +9,8 @@ void check(const wstring& Text, const wstring& key, const bool destructCipherTex
 		wstring decryptedText;
 		modAlphaCipher cipher(key);
 		cipherText = cipher.encrypt(Text); // зашифровывание
-		if (destructCipherText) // надо "портить"?
-			cipherText.front() = tolower(cipherText.front()); // "портим"
+		if (destructCipherText) 
+			cipherText.front() = tolower(cipherText.front());
 		decryptedText = cipher.decrypt(cipherText);
 		wcout<<L"key="<<key<<endl;
 		wcout<<Text<<endl;
@@ -22,14 +22,14 @@ void check(const wstring& Text, const wstring& key, const bool destructCipherTex
 	}
 }
 int main(int argc, char **argv)
-/{ 
+{ 
 	locale loc("ru_RU.UTF-8");
     locale::global(loc);
-	check(L"Lorem ipsum dolor sit amet, consectetur adipiscing elit",L"Lorem");
-	check(L"Lorem ipsum dolor sit amet, consectetur adipiscing elit",L"");
-	check(L"Lorem ipsum dolor sit amet, consectetur adipiscing elit",L"TEST 123");
-	check(L"TLorem ipsum dolor sit amet, consectetur adipiscing elit",L"a");
-	check(L"123",L"ABCD");
-	check(L"Lorem ipsum dolor sit amet, consectetur adipiscing elit",L"consectetur",true);
+	check(L"Привет",L"4");
+	// check(L"Lorem ipsum dolor sit amet, consectetur adipiscing elit",L"");
+	// check(L"Lorem ipsum dolor sit amet, consectetur adipiscing elit",L"TEST 123");
+	// check(L"TLorem ipsum dolor sit amet, consectetur adipiscing elit",L"a");
+	// check(L"123",L"ABCD");
+	// check(L"Lorem ipsum dolor sit amet, consectetur adipiscing elit",L"consectetur",true);
 return 0;
 }
